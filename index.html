@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="cardgram">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Cardgram: location based instagram gallery</title>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="src/app.js"></script> 
+  <script src="lib/ui-bootstrap-0.10.0.min.js"></script> 
+  <link rel="stylesheet" href="style/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="style/bootstrap-responsive.css" type="text/css">
+  <link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+  <body ng-controller="cardcontroller" class="page-wrap">
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+        </ul>
+        <h3 class="text-muted"></h3>
+      </div>
+
+      <div class="module">
+        <h1>CardGram</h1>
+        <h3> Please select a location
+          <select ng-model="location" ng-options="c as c.name for c in cities" ng-change="cityChange($event)"></select>
+        </h3>
+
+      </div>
+
+        <ul id="">
+              <li ng-repeat="image in images" class="module module-related">
+                <figure>
+                  <img ng-src="{{ image.images.standard_resolution.url }}" class="picture"/>
+                </figure>
+                  <p class="caption">
+                    <cite class="author">
+                      <img ng-src="{{ image.user.profile_picture }}" width="50" height="50" /> 
+                        {{image.user.username}}
+                    </cite> 
+                      {{image.caption.text}}
+                  </p>
+
+                  <ul>
+                    <li class="comment" ng-repeat="comment in image.comments.data">
+                      <cite class="author">
+                        <img ng-src="{{ comment.from.profile_picture }}" width="40" height="40" class="avatar" /> 
+                          {{comment.from.username}}
+                      </cite> 
+                        {{comment.text}}
+                    </li>
+                  </ul>
+              </li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p></p>
+      </div>
+
+    </div>
+</body>
+  
+</html>
