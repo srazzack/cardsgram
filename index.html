@@ -28,22 +28,23 @@
 
       </div>
 
-        <ul id="">
+        <ul>
               <li ng-repeat="image in images" class="module module-related">
                 <figure>
                   <img ng-src="{{ image.images.standard_resolution.url }}" class="picture"/>
                 </figure>
+
                   <p class="caption">
                     <cite class="author">
-                      <img ng-src="{{ image.user.profile_picture }}" width="50" height="50" /> 
-                        {{image.user.username}}
+                      <img ng-src="{{ image.user.profile_picture }}" width="60" height="60" class="avatar" /> 
+                      {{image.user.username}}
                     </cite> 
-                      {{image.caption.text}}
+                      <div class="description">{{image.caption.text}}</div>
                   </p>
 
                   <ul>
-                    <li class="comment" ng-repeat="comment in image.comments.data">
-                      <cite class="author">
+                    <li class="comment caption" ng-repeat="comment in image.comments.data">
+                      <cite class="commenter">
                         <img ng-src="{{ comment.from.profile_picture }}" width="40" height="40" class="avatar" /> 
                           {{comment.from.username}}
                       </cite> 

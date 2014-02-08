@@ -1,8 +1,19 @@
-body { 
+  
+  body { 
     font:20px sans-serif; 
   }
   cite { 
     font-weight:bold; 
+  }
+  ul {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+  }
+  .description {
+    color: #6B581A;
+    font-weight: bold;
   }
 
   .picture { 
@@ -16,17 +27,30 @@ body {
   .avatar { 
     border-radius:100%; 
     border-width:1px; 
-    border-style: dotted solid; 
+    border-style: dashed solid; 
   }
 
   .caption { 
-    font-size:20px; 
+    font-size:15px; 
   }
+
+  .author { 
+    font-size: 22px;
+    font-weight: bold;
+  }
+
   .author img { 
     float:left;
     margin:0 10px 0 0px; 
   }
+
+  .commenter {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
   .comment { 
+
     display:block; 
     clear:both; 
     min-height:2.1em; 
@@ -45,14 +69,14 @@ body {
     padding: 20px 30px 20px 30px !important;
     width: 50%;
     overflow: hidden;
-    clear: none;
+    display: center;
+    margin: 0 auto;
     font-size: 80%;
   }
 
   .page-wrap {
     background: #d6d5d5;
     width: 100%;
-    margin: auto 40px;
     position: relative;
     padding-top: 20px;
   }
